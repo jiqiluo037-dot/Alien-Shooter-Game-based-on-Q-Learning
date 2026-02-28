@@ -1,0 +1,69 @@
+# 游戏基础配置常量
+import pygame
+
+# ================== 游戏配置 ==================
+SCREEN_WIDTH = 400
+SCREEN_HEIGHT = 600
+PLAYER_WIDTH = 40
+PLAYER_HEIGHT = 40
+PLAYER_SPEED = 8  # 玩家速度
+BULLET_WIDTH = 4
+BULLET_HEIGHT = 12
+BULLET_SPEED = 10
+ALIEN_SIZE = 20
+ITEM_SIZE = 20
+FPS = 60
+
+# 颜色定义
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+RED = (255, 0, 0)
+GREEN = (0, 255, 0)
+BLUE = (0, 0, 255)
+YELLOW = (255, 255, 0)
+CYAN = (0, 255, 255)
+MAGENTA = (255, 0, 255)
+GRAY = (128, 128, 128)
+LIGHT_GRAY = (200, 200, 200)
+PURPLE = (128, 0, 128)
+ORANGE = (255, 165, 0)
+
+# 道具类型
+ITEM_ATTACK = 1
+ITEM_ELIMINATE = 2
+ITEM_SCORE_X2 = 3
+ITEM_SHIELD = 4  # 新增护盾道具
+
+# 难度参数 - 修正后
+DIFFICULTY = {
+    'easy': {
+        'alien_speed': 0.8,  # 适度提高速度
+        'spawn_alien_prob': 0.003,  # 适度提高生成概率
+        'spawn_item_prob': 0.012,  # 提高道具生成概率
+        'max_aliens': 10,  # 适度增加外星人数量
+        'time_limit': 60  # 1分钟游戏时间
+    },
+    'normal': {
+        'alien_speed': 1.0,  # 适中速度
+        'spawn_alien_prob': 0.0045,  # 适中生成概率
+        'spawn_item_prob': 0.009,  # 适中道具生成概率
+        'max_aliens': 12,  # 适中外星人数量
+        'time_limit': 60  # 1分钟游戏时间
+    },
+    'difficult': {
+        'alien_speed': 1.3,  # 较快速度
+        'spawn_alien_prob': 0.006,  # 较高生成概率
+        'spawn_item_prob': 0.007,  # 略低道具生成概率
+        'max_aliens': 15,  # 较多外星人数量
+        'time_limit': 60  # 1分钟游戏时间
+    }
+}
+
+# Q-learning 参数
+ALPHA = 0.1  # 降低学习率防止过拟合
+GAMMA = 0.9  # 降低折扣因子
+EPSILON_START = 0.98  # 更高的初始探索率
+EPSILON_MIN = 0.05  # 最小探索率
+EPSILON_DECAY = 0.9995  # 更慢的探索率衰减
+NUM_EPISODES = 5000  # 5000轮
+MAX_STEPS = 3600  # 60秒 * 60 FPS = 3600 步
